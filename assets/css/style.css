@@ -1,0 +1,365 @@
+/* ============================================================
+   Animalia - Hoja de estilos principal
+   ============================================================ */
+
+:root {
+    --verde: #2f7d5b;
+    --verde-oscuro: #1f5a41;
+    --verde-claro: #e6f4ec;
+    --naranja: #f2994a;
+    --oro: #f5b83d;
+    --texto: #26332d;
+    --gris: #6b7a72;
+    --fondo: #f6faf7;
+    --blanco: #ffffff;
+    --sombra: 0 4px 14px rgba(31, 90, 65, 0.12);
+    --radio: 14px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: var(--verde);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Barra de navegación ---------- */
+.navbar {
+    background: var(--verde);
+    color: var(--blanco);
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    box-shadow: var(--sombra);
+}
+
+.navbar .logo {
+    color: var(--blanco);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.navbar .logo:hover {
+    text-decoration: none;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.navbar nav a {
+    color: var(--blanco);
+}
+
+.saludo {
+    opacity: 0.9;
+}
+
+/* ---------- Contenedor ---------- */
+.contenedor {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 20px;
+    flex: 1;
+}
+
+/* ---------- Botones ---------- */
+.btn {
+    display: inline-block;
+    background: var(--naranja);
+    color: var(--blanco) !important;
+    border: none;
+    border-radius: 999px;
+    padding: 9px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.15s;
+}
+
+.btn:hover {
+    background: #e0852f;
+    transform: translateY(-1px);
+    text-decoration: none !important;
+}
+
+.btn-secundario {
+    background: transparent;
+    border: 2px solid currentColor;
+    color: var(--blanco) !important;
+}
+
+.btn-secundario:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.hero .btn-secundario {
+    color: var(--verde) !important;
+}
+
+.hero .btn-secundario:hover {
+    background: var(--verde-claro);
+}
+
+.btn-grande {
+    padding: 13px 30px;
+    font-size: 1.1rem;
+}
+
+.btn-block {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px;
+}
+
+/* ---------- Página de inicio (hero) ---------- */
+.hero {
+    text-align: center;
+    background: var(--blanco);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    padding: 70px 24px;
+    margin-top: 20px;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    color: var(--verde-oscuro);
+    margin-bottom: 14px;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 28px;
+    color: var(--gris);
+    font-size: 1.1rem;
+}
+
+.hero-botones {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* ---------- Formularios (login / registro) ---------- */
+.tarjeta-form {
+    background: var(--blanco);
+    max-width: 420px;
+    margin: 20px auto;
+    padding: 34px 30px;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+.tarjeta-form h2 {
+    text-align: center;
+    color: var(--verde-oscuro);
+    margin-bottom: 20px;
+}
+
+.tarjeta-form label {
+    display: block;
+    font-weight: 600;
+    margin: 14px 0 6px;
+    font-size: 0.95rem;
+}
+
+.tarjeta-form input {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1.5px solid #cfdcd4;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.tarjeta-form input:focus {
+    outline: none;
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(47, 125, 91, 0.18);
+}
+
+.texto-centro {
+    text-align: center;
+    margin-top: 18px;
+    color: var(--gris);
+}
+
+/* ---------- Alertas ---------- */
+.alerta {
+    padding: 11px 14px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.alerta-error {
+    background: #fdeaea;
+    color: #a12b2b;
+    border: 1px solid #f3c2c2;
+}
+
+.alerta-ok {
+    background: var(--verde-claro);
+    color: var(--verde-oscuro);
+    border: 1px solid #bfe0cd;
+}
+
+/* ---------- Dashboard ---------- */
+.bienvenida {
+    background: linear-gradient(135deg, var(--verde), var(--verde-oscuro));
+    color: var(--blanco);
+    padding: 34px 30px;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    margin-bottom: 32px;
+}
+
+.bienvenida h1 {
+    font-size: 1.9rem;
+    margin-bottom: 6px;
+}
+
+.titulo-seccion {
+    color: var(--verde-oscuro);
+    margin-bottom: 18px;
+    font-size: 1.5rem;
+}
+
+/* ---------- Tarjetas de veterinarias ---------- */
+.grid-vets {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 20px;
+}
+
+.vet-card {
+    position: relative;
+    background: var(--blanco);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    padding: 24px 22px 20px;
+    border-top: 5px solid var(--verde);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.vet-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(31, 90, 65, 0.2);
+}
+
+.vet-card-oro {
+    border-top-color: var(--oro);
+    background: linear-gradient(180deg, #fffaf0, var(--blanco) 45%);
+}
+
+.vet-puesto {
+    position: absolute;
+    top: -14px;
+    right: 18px;
+    background: var(--naranja);
+    color: var(--blanco);
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 4px 14px;
+    box-shadow: var(--sombra);
+}
+
+.vet-card-oro .vet-puesto {
+    background: var(--oro);
+}
+
+.vet-card h3 {
+    color: var(--verde-oscuro);
+    margin-bottom: 4px;
+}
+
+.vet-ciudad {
+    color: var(--gris);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.vet-nota {
+    margin-bottom: 8px;
+}
+
+.estrellas {
+    color: var(--oro);
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+}
+
+.vet-nota small {
+    color: var(--gris);
+}
+
+.vet-especialidad {
+    display: inline-block;
+    background: var(--verde-claro);
+    color: var(--verde-oscuro);
+    border-radius: 999px;
+    padding: 3px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.vet-desc {
+    font-size: 0.93rem;
+    margin-bottom: 10px;
+}
+
+.vet-tel {
+    font-size: 0.9rem;
+    color: var(--gris);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--gris);
+    font-size: 0.88rem;
+    border-top: 1px solid #dde8e1;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero {
+        padding: 44px 18px;
+    }
+}
